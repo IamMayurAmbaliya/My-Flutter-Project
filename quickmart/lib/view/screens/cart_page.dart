@@ -24,7 +24,7 @@ class _CartPageState extends State<CartPage> {
           (element['price'] * (element['discountPercentage'] ?? 0.0)) / 100;
       totalPrice += (element['price'] - discount) * element['qty'];
       Subtotal += element['price'] * element['qty'];
-      Totaldiscount += discount;
+      Totaldiscount = (Totaldiscount + discount) * element['qty'];
     });
   }
 
@@ -265,8 +265,7 @@ class _CartPageState extends State<CartPage> {
                                                           if (e['qty'] > 1) {
                                                             e['qty']--;
                                                           } else {
-                                                            addToCart
-                                                                .remove(e);
+                                                            addToCart.remove(e);
                                                           }
                                                           calculateBill();
                                                         });
@@ -293,15 +292,15 @@ class _CartPageState extends State<CartPage> {
                                         onTap: () {
                                           setState(() {
                                             addToCart.remove(e);
+                                            calculateBill();
                                           });
                                         },
                                         child: Container(
                                           decoration: BoxDecoration(
-                                            border: Border.all(
-                                                color: Colors.black),
+                                            border:
+                                                Border.all(color: Colors.black),
                                             borderRadius:
-                                                BorderRadius.circular(
-                                                    h * 0.02),
+                                                BorderRadius.circular(h * 0.02),
                                           ),
                                           alignment: Alignment.center,
                                           child: const Icon(
@@ -328,7 +327,7 @@ class _CartPageState extends State<CartPage> {
                           border: Border.all(
                             color: Colors.black,
                           ),
-                          borderRadius: BorderRadius.circular(h*0.02),
+                          borderRadius: BorderRadius.circular(h * 0.02),
                         ),
                         padding: const EdgeInsets.all(8),
                         // color: Colors.red,
@@ -368,7 +367,7 @@ class _CartPageState extends State<CartPage> {
                               height: h * 0.01,
                             ),
                             Text(
-                              "Total Discount   :  ${Totaldiscount.toString().split('.')[0]}.${Totaldiscount.toString().split('.')[1][0]}${Totaldiscount.toString().split('.')[1][1]}",
+                              "You Saved          :  ${Totaldiscount.toString().split('.')[0]}.${Totaldiscount.toString().split('.')[1][0]}${Totaldiscount.toString().split('.')[1][1]}",
                               style: TextStyle(
                                 fontSize: h * 0.02,
                                 fontWeight: FontWeight.w500,
@@ -394,10 +393,16 @@ class _CartPageState extends State<CartPage> {
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           color: Colors.black,
-                          borderRadius: BorderRadius.circular(h*0.02),
+                          borderRadius: BorderRadius.circular(h * 0.02),
                         ),
                         alignment: Alignment.center,
-                        child: Text("Chechout (${addToCart.length})",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: h*0.02),),
+                        child: Text(
+                          "Chechout (${addToCart.length})",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              fontSize: h * 0.02),
+                        ),
                       ),
                     ),
                   ],

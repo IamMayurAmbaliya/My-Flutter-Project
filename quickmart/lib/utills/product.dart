@@ -383,6 +383,29 @@ List<String> images = [
   "https://freesvg.org/img/monitor-fondo.pie.png",
 ];
 
+List <Map<String,dynamic>> image = [
+  {
+    "category" : "laptop",
+    "image" : "https://freesvg.org/img/metalmarious_Laptop.png",
+  },
+  {
+    "category": "watch",
+    "image" :   "https://freesvg.org/img/Stellaris_Analog_wrist-watch.png",
+  },
+  {
+    "category": "phone",
+    "image" :   "https://freesvg.org/img/SchoolFreeware-Animated-Smart-Phone-Black-White.png",
+  },
+  {
+    "category": "headphone",
+    "image" : "https://freesvg.org/img/headphone.png",
+  },
+  {
+    "category": "monitor",
+    "image" : "https://freesvg.org/img/monitor-fondo.pie.png",
+  },
+];
+
 List Category = AllCategory.toSet().toList();
 
 List likedProducts = [];

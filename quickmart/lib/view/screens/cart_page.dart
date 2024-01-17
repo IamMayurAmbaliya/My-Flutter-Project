@@ -24,7 +24,7 @@ class _CartPageState extends State<CartPage> {
           (element['price'] * (element['discountPercentage'] ?? 0.0)) / 100;
       totalPrice += (element['price'] - discount) * element['qty'];
       Subtotal += element['price'] * element['qty'];
-      Totaldiscount = (Totaldiscount + discount) * element['qty'];
+      Totaldiscount = Totaldiscount + (discount * element['qty']);
     });
   }
 

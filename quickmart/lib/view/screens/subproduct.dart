@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:developer';
 import 'package:quickmart/utills/product.dart';
+import 'package:quickmart/utills/routes.dart';
 import 'package:quickmart/view/screens/home_page.dart';
 
 class SubproductPage extends StatefulWidget {
@@ -15,6 +16,7 @@ class _SubproductPageState extends State<SubproductPage> {
 
   @override
   Widget build(BuildContext context) {
+    String cat = ModalRoute.of(context)!.settings.arguments as String;
     Size size = MediaQuery.of(context).size;
     double h = size.height;
     double w = size.width;
@@ -38,17 +40,66 @@ class _SubproductPageState extends State<SubproductPage> {
             style: TextStyle(color: Colors.black),
           ),
         ),
-        body: Column(
-          children: [
-            ...product.map((e) => (e['category_image'] == CategoryImage)
-                ? Container(
-                    height: 0.45,
-                    width: 0.45,
-                    color: Colors.black,
-                    margin: const EdgeInsets.all(5),
-                  )
-                : const Text("THERE IS NO ITEMS")),
-          ],
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              ...product.map(
+                (e) => (e['category'] == cat)
+                    ? Container(
+                        height: h * 0.3,
+                        width: w,
+                        margin: const EdgeInsets.all(5),
+                        color: Colors.white,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              flex: 3,
+                              child: GestureDetector(
+                                onTap: (){
+                                  Navigator.of(context).pushNamed(
+                                      AllRoutes.detail_page,
+                                      arguments: e);
+                                },
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  child: Image(
+                                    image: NetworkImage(e['image']),
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "${e['title']}",
+                                    style: TextStyle(fontSize: h * 0.023),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                  SizedBox(
+                                    height: h * 0.01,
+                                  ),
+                                  Text(
+                                    "${e['price']} \$",
+                                    style: TextStyle(
+                                        fontSize: h * 0.020,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    : Container(),
+              ),
+            ].toList(),
+          ),
         ),
       ),
     );

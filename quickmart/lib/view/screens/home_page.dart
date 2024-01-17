@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
           //   ),
           // ),
           SizedBox(
-           width: w*0.025,
+            width: w * 0.025,
           ),
           const CircleAvatar(
             backgroundColor: Colors.transparent,
@@ -206,14 +206,15 @@ class _HomePageState extends State<HomePage> {
                 // aama category nay aave aama product list j rakhva nu thase.
                 child: Row(
                   children: [
-                    ...images
+                    ...image
                         .map(
                           (e) => GestureDetector(
                             onTap: () {
                               setState(() {
                                 Navigator.of(context).pushNamed(
-                                    AllRoutes.subproduct,
-                                    arguments: e);
+                                  AllRoutes.subproduct,
+                                  arguments: e['category'],
+                                );
                               });
                             },
                             child: Container(
@@ -245,7 +246,9 @@ class _HomePageState extends State<HomePage> {
                                   //   ],
                                   // ),
                                   Image(
-                                image: NetworkImage(e),
+                                image: NetworkImage(
+                                  e['image'],
+                                ),
                                 fit: BoxFit.fill,
                               ),
                             ),

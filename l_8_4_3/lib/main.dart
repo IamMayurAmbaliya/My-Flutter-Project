@@ -1,37 +1,43 @@
+
+
+
 import 'package:flutter/material.dart';
 
-void main() {
+void main()
+{
   runApp(
-    MaterialApp(
+
+    const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: myIcon(),
+      home: IconApp(),
     ),
   );
 }
-
-class myIcon extends StatefulWidget {
-  const myIcon({super.key});
+class IconApp extends StatefulWidget {
+  const IconApp({super.key});
 
   @override
-  State<myIcon> createState() => _myIconState();
+  State<IconApp> createState() => _IconAppState();
 }
 
-class _myIconState extends State<myIcon> {
+class _IconAppState extends State<IconApp> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          centerTitle: true,
           title: const Text(
             "Icons",
             style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w400,
+              letterSpacing: 1.5,
               color: Colors.black,
             ),
           ),
-          backgroundColor: Colors.white,
+          centerTitle: true,
+          shadowColor: Colors.black,
+          elevation: 10,
+          backgroundColor: Colors.grey.shade200,
         ),
         body: Padding(
           padding: const EdgeInsets.all(16),
@@ -43,323 +49,382 @@ class _myIconState extends State<myIcon> {
                   child: Row(
                     children: [
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.add,
+                          size: 50,
+                        ),
                       ),
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.logout,
+                          size: 40,
+                        ),
                       ),
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.arrow_forward_ios,
+                          size: 40,
+                        ),
                       ),
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.arrow_back_ios,
+                          size: 40,
+                        ),
                       ),
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.refresh,
+                          size: 40,
+                        ),
                       ),
                     ],
                   ),
-                ),
-                SizedBox(
-                  height: 10,
                 ),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.search,
+                          size: 50,
+                        ),
                       ),
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.security,
+                          size: 50,
+                        ),
                       ),
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.settings,
+                          size: 50,
+                        ),
                       ),
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.ac_unit,
+                          size: 50,
+                        ),
                       ),
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.access_alarm_outlined,
+                          size: 50,
+                        ),
                       ),
                     ],
                   ),
-                ),
-                SizedBox(
-                  height: 10,
                 ),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.add_circle_outline,
+                          size: 50,
+                        ),
                       ),
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.add_chart_outlined,
+                          size: 50,
+                        ),
                       ),
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.accessibility,
+                          size: 50,
+                        ),
                       ),
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.account_balance_outlined,
+                          size: 50,
+                        ),
                       ),
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.account_balance_wallet_outlined,
+                          size: 50,
+                        ),
                       ),
                     ],
                   ),
-                ),
-                SizedBox(
-                  height: 10,
                 ),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.delete,
+                          size: 50,
+                        ),
                       ),
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.grade_outlined,
+                          size: 50,
+                        ),
                       ),
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.expand_less_outlined,
+                          size: 50,
+                        ),
                       ),
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.dark_mode,
+                          size: 50,
+                        ),
                       ),
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.desktop_windows_outlined,
+                          size: 50,
+                        ),
                       ),
                     ],
                   ),
-                ),
-                SizedBox(
-                  height: 10,
                 ),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.app_registration,
+                          size: 50,
+                        ),
                       ),
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.toggle_off,
+                          size: 50,
+                        ),
                       ),
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.bolt,
+                          size: 50,
+                        ),
                       ),
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.download_outlined,
+                          size: 50,
+                        ),
                       ),
                       Container(
+                        margin: const EdgeInsets.all(10),
                         height: 150,
                         width: 150,
-                        color: Colors.black,
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 150,
-                        width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        height: 150,
-                        width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        height: 150,
-                        width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        height: 150,
-                        width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        height: 150,
-                        width: 150,
-                        color: Colors.black,
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 150,
-                        width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        height: 150,
-                        width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        height: 150,
-                        width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        height: 150,
-                        width: 150,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        height: 150,
-                        width: 150,
-                        color: Colors.black,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.key_off_outlined,
+                          size: 50,
+                        ),
                       ),
                     ],
                   ),
@@ -368,7 +433,387 @@ class _myIconState extends State<myIcon> {
             ),
           ),
         ),
+        backgroundColor: Colors.grey.shade300,
       ),
     );
   }
 }
+
+
+
+
+// import 'package:flutter/material.dart';
+//
+// void main() {
+//   runApp(
+//     MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: myIcon(),
+//     ),
+//   );
+// }
+//
+// class myIcon extends StatefulWidget {
+//   const myIcon({super.key});
+//
+//   @override
+//   State<myIcon> createState() => _myIconState();
+// }
+//
+// class _myIconState extends State<myIcon> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return SafeArea(
+//       child: Scaffold(
+//         appBar: AppBar(
+//           centerTitle: true,
+//           title: const Text(
+//             "Icons",
+//             style: TextStyle(
+//               fontSize: 25,
+//               fontWeight: FontWeight.bold,
+//               color: Colors.black,
+//             ),
+//           ),
+//           backgroundColor: Colors.white,
+//         ),
+//         body: Padding(
+//           padding: const EdgeInsets.all(16),
+//           child: SingleChildScrollView(
+//             child: Column(
+//               children: [
+//                 SingleChildScrollView(
+//                   scrollDirection: Axis.horizontal,
+//                   child: Row(
+//                     children: [
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container
+//                         (
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//                 SizedBox(
+//                   height: 10,
+//                 ),
+//                 SingleChildScrollView(
+//                   scrollDirection: Axis.horizontal,
+//                   child: Row(
+//                     children: [
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//                 SizedBox(
+//                   height: 10,
+//                 ),
+//                 SingleChildScrollView(
+//                   scrollDirection: Axis.horizontal,
+//                   child: Row(
+//                     children: [
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//                 SizedBox(
+//                   height: 10,
+//                 ),
+//                 SingleChildScrollView(
+//                   scrollDirection: Axis.horizontal,
+//                   child: Row(
+//                     children: [
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//                 SizedBox(
+//                   height: 10,
+//                 ),
+//                 SingleChildScrollView(
+//                   scrollDirection: Axis.horizontal,
+//                   child: Row(
+//                     children: [
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//                 SizedBox(
+//                   height: 10,
+//                 ),
+//                 SingleChildScrollView(
+//                   scrollDirection: Axis.horizontal,
+//                   child: Row(
+//                     children: [
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//                 SizedBox(
+//                   height: 10,
+//                 ),
+//                 SingleChildScrollView(
+//                   scrollDirection: Axis.horizontal,
+//                   child: Row(
+//                     children: [
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                       const SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         height: 150,
+//                         width: 150,
+//                         color: Colors.black,
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }

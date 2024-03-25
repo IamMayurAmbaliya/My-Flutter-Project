@@ -1,8 +1,12 @@
+import 'package:clock_app/utills/globals/routes.dart';
+import 'package:clock_app/view/screens/clock_page/clock_page.dart';
+import 'package:clock_app/view/screens/home_page/home_page.dart';
+import 'package:clock_app/view/screens/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MyClock(),
+    const MyClock(),
   );
 }
 
@@ -18,26 +22,11 @@ class _MyClockState extends State<MyClock> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          elevation: 0,
-          title: Text("Clock"),
-        ),
-        body: ElevatedButton(
-          onPressed: () {},
-          child: Text("Click"),
-          style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(
-                Colors.green,
-              ),
-              shape: MaterialStateProperty.all(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5),
-                ),
-              )),
-        ),
-      ),
+      routes: {
+        Routes.splashscreen: (context) => const SplashScreen(),
+        Routes.homepage: (context) => const HomePage(),
+        Routes.clockpage: (context) => const ClockPage(),
+      },
     );
   }
 }

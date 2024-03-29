@@ -1,6 +1,6 @@
 import 'package:quotes_app/headers.dart';
 
-Widget DialogueBox({required BuildContext context}) {
+Widget dialogueBox({required BuildContext context}) {
   return Center(
     child: Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,

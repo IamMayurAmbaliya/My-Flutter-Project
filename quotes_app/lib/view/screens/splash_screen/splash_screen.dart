@@ -8,7 +8,7 @@ class SplashScreen extends StatelessWidget {
       const Duration(seconds: 3),
       () {
         Navigator.of(context).pushReplacementNamed(
-          AppRoutes.homePage,
+          AppRoutes.quotepage,
         );
       },
     );

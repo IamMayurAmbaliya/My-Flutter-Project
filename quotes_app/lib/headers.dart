@@ -1,10 +1,11 @@
 export 'package:flutter/material.dart';
 export 'package:quotes_app/routes/app_routes.dart';
-export 'package:quotes_app/view/screens/detail_page/detail_page.dart';
+export 'package:quotes_app/view/screens/quote_page/quote_page.dart';
 export 'package:quotes_app/view/screens/home_page/home_page.dart';
 export 'package:quotes_app/view/screens/splash_screen/splash_screen.dart';
 export 'package:quotes_app/app.dart';
-export 'package:quotes_app/view/screens/home_page/components/dialoguebox.dart';
+export 'package:quotes_app/view/screens/quote_page/Component/dialoguebox.dart';
 export 'package:quotes_app/modals/quote_modal.dart';
 export 'dart:math';
 export 'package:quotes_app/utills/quotes_utills.dart';
+export 'package:quotes_app/view/screens/detail_page/detail_page.dart';

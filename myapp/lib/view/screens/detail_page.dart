@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import "package:flutter_rating_bar/flutter_rating_bar.dart";
 import 'package:quickmart/utills/product.dart';
 import 'package:quickmart/utills/routes.dart';
 
@@ -81,218 +81,220 @@ class _DetailPageState extends State<DetailPage> {
               ),
               Expanded(
                 flex: 4,
-                child: Container(
-                  padding: const EdgeInsets.all(15),
-                  decoration: const BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20),
-                      bottomLeft: Radius.circular(20),
-                      bottomRight: Radius.circular(20),
+                child: SingleChildScrollView(
+                  child: Container(
+                    padding: const EdgeInsets.all(15),
+                    decoration: const BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20),
+                        bottomLeft: Radius.circular(20),
+                        bottomRight: Radius.circular(20),
+                      ),
                     ),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(6),
-                            height: h * 0.04,
-                            decoration: BoxDecoration(
-                              color: Color(0xff1f8bda),
-                              borderRadius: BorderRadius.circular(h * 0.05),
-                            ),
-                            alignment: Alignment.center,
-                            child: Text(
-                              "Top Rated",
-                              style: TextStyle(
-                                fontSize: h * 0.02,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(6),
+                              height: h * 0.04,
+                              decoration: BoxDecoration(
+                                color: Color(0xff1f8bda),
+                                borderRadius: BorderRadius.circular(h * 0.05),
+                              ),
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Top Rated",
+                                style: TextStyle(
+                                  fontSize: h * 0.02,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
-                          ),
-                          SizedBox(
-                            width: w * 0.025,
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(6),
-                            height: h * 0.04,
-                            decoration: BoxDecoration(
-                              color: Color(0xff08e488),
-                              borderRadius: BorderRadius.circular(h * 0.05),
+                            SizedBox(
+                              width: w * 0.025,
                             ),
-                            alignment: Alignment.center,
-                            child: Text(
-                              "Free Shipping",
-                              style: TextStyle(
-                                fontSize: h * 0.02,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
+                            Container(
+                              padding: const EdgeInsets.all(6),
+                              height: h * 0.04,
+                              decoration: BoxDecoration(
+                                color: Color(0xff08e488),
+                                borderRadius: BorderRadius.circular(h * 0.05),
+                              ),
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Free Shipping",
+                                style: TextStyle(
+                                  fontSize: h * 0.02,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: h * 0.01,
-                      ),
-                      // Row(
-                      //   children: [
-                      //     Container(
-                      //       padding: const EdgeInsets.all(6),
-                      //       height: h * 0.04,
-                      //       decoration: BoxDecoration(
-                      //         color: Color(0xff08e488),
-                      //         borderRadius: BorderRadius.circular(15),
-                      //       ),
-                      //       alignment: Alignment.center,
-                      //       child: Text(
-                      //         "Free Shipping",
-                      //         style: TextStyle(
-                      //           fontSize: h * 0.02,
-                      //           fontWeight: FontWeight.w500,
-                      //           color: Colors.white,
-                      //         ),
-                      //       ),
-                      //     ),
-                      //   ],
-                      // ),
-                      Row(
-                        children: [
-                          ActionChip(
-                            avatar:
-                                (likedProducts.contains(product.indexOf(data)))
-                                    ? const Icon(
-                                        Icons.favorite,
-                                        color: Colors.red,
-                                      )
-                                    : const Icon(Icons.favorite_border),
-                            backgroundColor: Colors.yellow,
-                            padding: EdgeInsets.all(6),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(h * 0.05),
-                            ),
-                            label:
-                                (!likedProducts.contains(product.indexOf(data)))
-                                    ? const Text("Like")
-                                    : const Text("UnLike"),
-                            onPressed: () {
-                              int index = product.indexOf(data);
-                              log("$index");
-
-                              likedProducts.contains(index)
-                                  ? likedProducts.remove(index)
-                                  : likedProducts.add(index);
-
-                              log("$likedProducts");
-                              setState(() {});
-                            },
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: h * 0.015,
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            data['title'],
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: h * 0.03,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(
-                            width: w * 0.02,
-                          ),
-                          // Text(
-                          //   data['category'],
-                          //   style: TextStyle(
-                          //     color: Colors.white,
-                          //     fontSize: h * 0.03,
-                          //     fontWeight: FontWeight.bold,
-                          //   ),
-                          // ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: h * 0.020,
-                      ),
-                      Text(
-                        "\$ ${data['price']}",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: h * 0.03,
-                          fontWeight: FontWeight.bold,
+                          ],
                         ),
-                      ),
-                      // Row(
-                      //   children: [
-                      //     Text(
-                      //       "$symbol",
-                      //       style: TextStyle(
-                      //         color: Colors.white,
-                      //         fontSize: h * 0.03,
-                      //         fontWeight: FontWeight.bold,
-                      //       ),
-                      //     ),
-                      //     SizedBox(
-                      //       width: w * 0.015,
-                      //     ),
-                      //     Text(
-                      //       data['price'].toString(),
-                      //       style: TextStyle(
-                      //         color: Colors.white,
-                      //         fontSize: h * 0.03,
-                      //         fontWeight: FontWeight.bold,
-                      //       ),
-                      //     ),
-                      //   ],
-                      // ),
-                      SizedBox(
-                        height: h * 0.01,
-                      ),
-                      Row(
-                        children: [
-                          RatingBarIndicator(
-                            rating: double.parse(data['rating'].toString()),
-                            itemSize: h * 0.03,
-                            itemCount: 5,
-                            direction: Axis.horizontal,
-                            textDirection: TextDirection.ltr,
-                            unratedColor: Colors.white,
-                            itemBuilder: (context, index) => const Icon(
-                              Icons.star_outlined,
-                              color: Color(0xffFFB001),
+                        SizedBox(
+                          height: h * 0.01,
+                        ),
+                        // Row(
+                        //   children: [
+                        //     Container(
+                        //       padding: const EdgeInsets.all(6),
+                        //       height: h * 0.04,
+                        //       decoration: BoxDecoration(
+                        //         color: Color(0xff08e488),
+                        //         borderRadius: BorderRadius.circular(15),
+                        //       ),
+                        //       alignment: Alignment.center,
+                        //       child: Text(
+                        //         "Free Shipping",
+                        //         style: TextStyle(
+                        //           fontSize: h * 0.02,
+                        //           fontWeight: FontWeight.w500,
+                        //           color: Colors.white,
+                        //         ),
+                        //       ),
+                        //     ),
+                        //   ],
+                        // ),
+                        Row(
+                          children: [
+                            ActionChip(
+                              avatar: (likedProducts
+                                      .contains(product.indexOf(data)))
+                                  ? const Icon(
+                                      Icons.favorite,
+                                      color: Colors.red,
+                                    )
+                                  : const Icon(Icons.favorite_border),
+                              backgroundColor: Colors.yellow,
+                              padding: EdgeInsets.all(6),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(h * 0.05),
+                              ),
+                              label: (!likedProducts
+                                      .contains(product.indexOf(data)))
+                                  ? const Text("Like")
+                                  : const Text("UnLike"),
+                              onPressed: () {
+                                int index = product.indexOf(data);
+                                log("$index");
+
+                                likedProducts.contains(index)
+                                    ? likedProducts.remove(index)
+                                    : likedProducts.add(index);
+
+                                log("$likedProducts");
+                                setState(() {});
+                              },
                             ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: h * 0.015,
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              data['title'],
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: h * 0.03,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(
+                              width: w * 0.02,
+                            ),
+                            // Text(
+                            //   data['category'],
+                            //   style: TextStyle(
+                            //     color: Colors.white,
+                            //     fontSize: h * 0.03,
+                            //     fontWeight: FontWeight.bold,
+                            //   ),
+                            // ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: h * 0.020,
+                        ),
+                        Text(
+                          "\$ ${data['price']}",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: h * 0.03,
+                            fontWeight: FontWeight.bold,
                           ),
-                          SizedBox(
-                            width: w * 0.020,
-                          ),
-                          Text(
+                        ),
+                        // Row(
+                        //   children: [
+                        //     Text(
+                        //       "$symbol",
+                        //       style: TextStyle(
+                        //         color: Colors.white,
+                        //         fontSize: h * 0.03,
+                        //         fontWeight: FontWeight.bold,
+                        //       ),
+                        //     ),
+                        //     SizedBox(
+                        //       width: w * 0.015,
+                        //     ),
+                        //     Text(
+                        //       data['price'].toString(),
+                        //       style: TextStyle(
+                        //         color: Colors.white,
+                        //         fontSize: h * 0.03,
+                        //         fontWeight: FontWeight.bold,
+                        //       ),
+                        //     ),
+                        //   ],
+                        // ),
+                        SizedBox(
+                          height: h * 0.01,
+                        ),
+                        Row(
+                          children: [
+                            RatingBarIndicator(
+                              rating: double.parse(data['rating'].toString()),
+                              itemSize: h * 0.03,
+                              itemCount: 5,
+                              direction: Axis.horizontal,
+                              textDirection: TextDirection.ltr,
+                              unratedColor: Colors.white,
+                              itemBuilder: (context, index) => const Icon(
+                                Icons.star_outlined,
+                                color: Color(0xffFFB001),
+                              ),
+                            ),
+                            SizedBox(
+                              width: w * 0.020,
+                            ),
+                            Text(
                               data['rating'].toString(),
-                            style: TextStyle(
-                                color: Colors.white, fontSize: h * 0.023),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: h * 0.020,
-                      ),
-                      Text(
-                        data['description'],
-                        maxLines: 4,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: h * 0.025,
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: h * 0.023),
+                            ),
+                          ],
                         ),
-                      ),
-                    ],
+                        SizedBox(
+                          height: h * 0.020,
+                        ),
+                        Text(
+                          data['description'],
+                          maxLines: 4,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: h * 0.025,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

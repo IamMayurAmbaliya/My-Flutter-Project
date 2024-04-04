@@ -72,6 +72,14 @@ class _CartPageState extends State<CartPage> {
                 color: Colors.black,
               ),
             ),
+            IconButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed(
+                  AllRoutes.pdf_page,
+                );
+              },
+              icon: const Icon(Icons.picture_as_pdf),
+            ),
             SizedBox(
               width: w * 0.025,
             )
@@ -321,8 +329,7 @@ class _CartPageState extends State<CartPage> {
                     Expanded(
                       flex: 2,
                       child: Container(
-                        margin: EdgeInsets.all(5),
-
+                        margin: const EdgeInsets.all(5),
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Colors.black,
@@ -342,9 +349,6 @@ class _CartPageState extends State<CartPage> {
                                 fontSize: h * 0.025,
                                 fontWeight: FontWeight.bold,
                               ),
-                            ),
-                            SizedBox(
-                              height: h * 0.02,
                             ),
                             Text(
                               "Selected Item    :  ${addToCart.length}",

@@ -300,7 +300,7 @@ class _HomePageState extends State<HomePage> {
                                   arguments: e);
                             },
                             child: Container(
-                              height: h * 0.27,
+                              height: h * 0.3,
                               width: w * 0.40,
                               margin: const EdgeInsets.all(5),
                               color: Colors.white,
